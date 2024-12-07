@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣诞音乐播放器</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="snowCanvas"></canvas>
+    <div class="container">
+        <div class="music-player">
+            <div class="player-content">
+                <div class="cover-container">
+                    <canvas id="coverCanvas"></canvas>
+                </div>
+                
+                <div class="song-info">
+                    <h2 id="song-title">选择音乐开始播放</h2>
+                    <p id="song-artist">本地音乐</p>
+                </div>
+
+                <div class="progress-container">
+                    <div class="time-display">
+                        <span id="current-time">--:--</span>
+                    </div>
+                    <div class="progress-bar" id="progress-bar">
+                        <div class="progress" id="progress"></div>
+                        <div class="progress-handle"></div>
+                    </div>
+                    <div class="time-display">
+                        <span id="total-time">--:--</span>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button class="control-button" id="prev-btn">
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button class="control-button" id="play-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="control-button" id="next-btn">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                </div>
+
+                <div class="volume-control">
+                    <i class="fas fa-volume-up" id="volume-icon"></i>
+                    <input type="range" id="volumeSlider" min="0" max="100" value="100">
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="upload-container">
+                <label for="file-upload" class="upload-button">
+                    <i class="fas fa-plus"></i>
+                    添加音乐
+                </label>
+                <input type="file" id="file-upload" accept="audio/*" multiple style="display: none;">
+            </div>
+            
+            <div class="playlist-container">
+                <h3>播放列表</h3>
+                <div id="playlist"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
